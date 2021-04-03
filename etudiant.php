@@ -15,7 +15,6 @@ if (isset($_POST['submit'])){
          INSERT INTO etudiant (name, lastname, date_naissance, mobile) VALUES (:name, :lastname, :date_naissance, :mobile)");
      $name=$_POST['name'];
      $prenom=$_POST['prenom'];
-
      $date_naissance= $_POST['date_naissance'];
      $mobile=$_POST['mobile'];
     $stmt->bindParam(':name', $name);
@@ -28,6 +27,7 @@ if (isset($_POST['submit'])){
 echo 'etudiant : '.$name.' '.$prenom.' ajouté avec succes !';
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +37,7 @@ echo 'etudiant : '.$name.' '.$prenom.' ajouté avec succes !';
 	<h3> Ajout 	étudiant </h3>
 	<p>Ce formulaire pour ajouter un etudiant !</p>
   <a href="liste_etudiant.php">Liste des etudiants </a>
+  <a href="classe.php">classe </a>
 <form action="" method="post">
 
   <label for="POST-name">Nom* :</label>
@@ -59,10 +60,10 @@ echo 'etudiant : '.$name.' '.$prenom.' ajouté avec succes !';
 </html>
 <style type="text/css">
   a {
-    padding: 10px;
-    background: blue;
-    color: white;
-    margin: 10px;
+    padding: 20px;
+    background: white;
+    color: red;
+    margin: 20px;
     float: right;
   }
 </style>
